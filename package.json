@@ -1,0 +1,17 @@
+{
+  "name": "jsonresume-theme-riga",
+  "version": "1.0.0",
+  "description": "Riga theme for JSON Resume (https://github.com/jsonresume)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andisab/jsonresume-theme-riga"
+  },
+  "keywords": [
+    "jsonresume",
+    "riga",
+    "theme"
+  ],
+  "author": "Andis A. Blukis <andis.blukis@rr.lv>",
+  "license": "MIT"
+}
