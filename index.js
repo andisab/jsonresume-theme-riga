@@ -1,5 +1,4 @@
 var fs = require('fs');
-var gravatar = require('gravatar');
 var _ = require('lodash')
 var Mustache = require('mustache');
 
