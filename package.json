@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-riga",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Riga theme for JSON Resume (https://github.com/jsonresume)",
   "main": "index.js",
   "repository": {
