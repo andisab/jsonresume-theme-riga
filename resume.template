@@ -45,19 +45,19 @@
 
 						{{#profiles.length}}
 						<div id="profiles">
-							{{#each profiles}}
+							{{#profiles}}
 							<div class="item">
 								{{#url.length}}
 								<a href="{{url}}">
 								{{/url.length}}
-								{{#network.length}}
+								{{#network}}
 								<icon class="entypo-{{class}}"></icon>
-								{{/network.length}}
+								{{/network}}
 								{{#url.length}}
 								</a>
 								{{/url.length}}
 							</div>
-							{{/each}}
+							{{/profiles}}
 						</div>
 						{{/profiles.length}}
 					</div>
