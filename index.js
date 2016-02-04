@@ -9,7 +9,7 @@ function render(resume) {
 	}
 	if (resume.work && resume.work.length > 0) {
 		for(var i=0; i<resume.work.length; i++) {
-			w = work[i];
+			w = resume.work[i];
 			w.startDateYear = w.startDate.substr(0,4);
 			if(w.endDate) {
 				w.endDateYear = w.endDate.substr(0,4);
@@ -20,7 +20,7 @@ function render(resume) {
 	}
 	if (resume.volunteer && resume.volunteer.length > 0) {
 		for(var i=0; i<resume.volunteer.length; i++) {
-			w = volunteer[i];
+			w = resume.volunteer[i];
 			w.startDateYear = w.startDate.substr(0,4);
 			if(w.endDate) {
 				w.endDateYear = w.endDate.substr(0,4);
@@ -32,7 +32,7 @@ function render(resume) {
 	}
 	if (resume.education && resume.education.length > 0) {
 		for(var i=0; i<resume.education.length; i++) {
-			e = education[i];
+			e = resume.education[i];
 			if( !e.area || !e.studyType ){
 				e.educationDetail = (e.area == null ? '' : e.area) + (e.studyType == null ? '' : e.studyType);
 			}  else {
