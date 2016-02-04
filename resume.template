@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{basics.name}}</title>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+		<style>
+			{{{css}}}
+		</style>
+	</head>
+	<body>
+		<div class='container-fluid'>
+			<main class="row">
+			<div class="col-sm-12">
+				<section id='header' class="row">
+
+				<div class="col-sm-3">
+					{{#basics.picture.length}}
+					<img class="picture" src="{{picture}}" alt="" />
+					{{/basics.picture.length}}
+
+					<div class="details">
+						{{#basics.phone}}
+						<strong>Phone:</strong> {{basics.phone}} <br />
+						{{/basics.phone}}
+						{{#basics.email}}
+						<strong>Email:</strong> <a href="mailto:{{basics.email}}">{{basics.email}}</a><br />
+						{{/basics.email}}
+						{{#basics.website}}
+						<strong>Website:</strong> <a href="{{basics.website}}">{{basics.website}}</a> <br />
+						{{/basics.website}}
+		                {{#location}}
+		                    {{#address.length}}
+		                        <div class="address">
+		                        <strong>Address: </strong>
+		                        {{address}}
+		                        {{#if city}}{{city}}{{/if}}
+		                        {{#if region}}, {{region}}{{/if}}
+		                        {{#if postalCode}} {{postalCode}}{{/if}}
+		                        </div>
+		                    {{/address.length}}
+		                {{/location}}
+
+						{{#profiles.length}}
+						<div id="profiles">
+							{{#each profiles}}
+							<div class="item">
+								{{#if url}}
+								<a href="{{url}}">
+								{{/if}}
+								{{#if network}}
+								<icon class="entypo-{{class}}"></icon>
+								{{/if}}
+								{{#if url}}
+								</a>
+								{{/if}}
+							</div>
+							{{/each}}
+						</div>
+						{{/profiles.length}}
+					</div>
+				</div>
+
+				<div class="col-sm-9 title">
+					<div class="name">
+						<h1>{{basics.name}}</h1><br />
+						<h2>{{basics.label}}</h2>
+					</div>
+					{{#basics.summary}}
+					<p>{{basics.summary}}</p>
+					{{/basics.summary}}
+				</div>
+
+				</section>
+				<hr style="color: #ccc; height: 4px;" />
+
+				<hr />
+				{{#work.length}}
+				<section id='work' class="row">
+				<h3 class="work">Work Experience</h3>
+				<div class="col-sm-12">
+					<div class="details">
+						{{#work}}
+						<h3 class="company">{{company}}<span class="date pull-right">{{startDateYear}} - {{endDateYear}}</span></h3>
+						<strong>{{position}}</strong>
+						{{#website}}
+						<div class="website pull-right">
+							<a target="_blank" href="{{.}}">{{.}}</a>
+						</div>
+						{{/website}}
+						<p>{{summary}}</p>
+						<ul>
+							{{#highlights}}
+							<li>{{.}}</li>
+							{{/highlights}}
+						</ul>
+						{{/work}}
+					</div>
+				</div>
+				</section>
+				<hr />
+				{{/work.length}}
+
+				{{#education.length}}
+				<section id='education' class="row">
+				<header class="col-sm-3">
+				<h3>Education</h3>
+				</header>
+				<div class="col-sm-9">
+					<div class="details">
+						{{#education}}
+						<h3>{{institution}}<span class="date pull-right">{{startDateYear}} - {{endDateYear}}</span></h3>
+						{{educationDetail}}
+						<p>{{summary}}</p>
+						{{#courses.length}}
+						<ul class="courses">
+							{{#courses}}
+							<li>{{.}}</li>
+							{{/courses}}
+						</ul>
+						{{/courses.length}}
+						{{/education}}
+					</div>
+				</div>
+				</section>
+				<hr />
+				{{/education.length}}
+				{{#skills.length}}
+				<section id='skills' class="row">
+				<header class="col-sm-3">
+				<h3>Skills</h3>
+				</header>
+				<div class="col-sm-9">
+					<div class="details row">
+						{{#skills}}
+						<div class='col-sm-12'>
+							<ul>
+								<li>
+								<h4>{{name}} <span class="pull-right">{{level}}</span></h4>
+								<ul>
+									{{#keywords}}
+									<li>{{.}}</li>
+									{{/keywords}}
+								</ul>
+								</li>
+							</ul>
+						</div>
+						{{/skills}}
+					</div>
+				</div>
+				</section>
+				<hr />
+				{{/skills.length}}
+				{{#volunteer.length}}
+				<section id='volunteer' class="row">
+				<header class="col-sm-3">
+				<h3>Volunteer</h3>
+				</header>
+				<div class="col-sm-9">
+					<div class="details">
+						{{#volunteer}}
+						<h3>{{organization}}<span class="date pull-right">{{startDateYear}} - {{endDateYear}}</span></h3>
+						<strong>{{position}}</strong>
+						{{#website}}
+						<div class="website pull-right">
+							<a target="_blank" href="{{.}}">{{.}}</a>
+						</div>
+						{{/website}}
+						<p>{{summary}}</p>
+						<ul>
+							{{#highlights}}
+							<li>{{.}}</li>
+							{{/highlights}}
+						</ul>
+						{{/volunteer}}
+					</div>
+				</div>
+				</section>
+				<hr />
+				{{/volunteer.length}}
+				{{#languages.length}}
+				<section id='languages' class="row">
+				<header class="col-sm-3">
+				<h3>Languages</h3>
+				</header>
+				<div class="col-sm-9">
+					<div class="details">
+						{{#languages}}
+						<ul>
+							<li>
+							<h4>{{language}} <span class="pull-right">{{fluency}}</span></h4>
+							</li>
+						</ul>
+						{{/languages}}
+					</div>
+				</div>
+				</section>
+				<hr />
+				{{/languages.length}}
+				{{#references.length}}
+				<section id='references' class="row">
+				<header class="col-sm-3">
+				<h3>References</h3>
+				</header>
+				<div class="col-sm-9">
+					<div class="details row">
+						{{#references}}
+
+						<p>"{{reference}}" -
+						<strong>{{name}}</strong>
+						</p>
+						{{/references}}
+					</div>
+				</div>
+				</section>
+				{{/references.length}}
+				<footer></footer>
+			</div>
+			</main>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+	</body>
+</html>
