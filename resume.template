@@ -31,7 +31,7 @@
 						{{#basics.website}}
 						<strong>Website:</strong> <a href="{{basics.website}}">{{basics.website}}</a> <br />
 						{{/basics.website}}
-		                {{#location}}
+		                {{#basics.location}}
 		                    {{#address.length}}
 		                        <div class="address">
 		                        <strong>Address: </strong>
@@ -41,25 +41,25 @@
 		                        {{#postalCode.length}} {{postalCode}}{{/postalCode.length}}
 		                        </div>
 		                    {{/address.length}}
-		                {{/location}}
+		                {{/basics.location}}
 
-						{{#profiles.length}}
+						{{#if profiles.length}}
 						<div id="profiles">
-							{{#profiles}}
+							{{#each profiles}}
 							<div class="item">
-								{{#url.length}}
+								{{#if url}}
 								<a href="{{url}}">
-								{{/url.length}}
-								{{#network}}
+								{{/if}}
+								{{#if network}}
 								<icon class="entypo-{{class}}"></icon>
-								{{/network}}
-								{{#url.length}}
+								{{/if}}
+								{{#if url}}
 								</a>
-								{{/url.length}}
+								{{/if}}
 							</div>
-							{{/profiles}}
-						</div>
-						{{/profiles.length}}
+							{{/each}}
+						</section>
+						{{/if}}
 					</div>
 				</div>
 

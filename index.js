@@ -1,8 +1,13 @@
-var fs = require('fs');
+var fs = require("fs");
 var _ = require('lodash')
-var Mustache = require('mustache');
+var Handlebars = require("handlebars");
 
-function render(resumeObject) {
+function render(resume) {
+	if (resume.basics && resume.basics.profiles.length > 0) {
+		for (var i=0; i < resume.basics.profiles.length; i++) {
+			resume.basics.profiles[i].class = resume.basics.profiles[i].network.toLowerCase();
+		}
+	}
 	_.each(resumeObject.work, function(w){
 		w.startDateYear = w.startDate.substr(0,4);
 		if(w.endDate) {
@@ -33,14 +38,14 @@ function render(resumeObject) {
 		}
 	});
 
-	var theme = fs.readFileSync(__dirname + '/resume.template', 'utf8');
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
-	resumeObject.css = css;
-	var resumeHTML = Mustache.render(theme, resumeObject);
-
-	return resumeHTML;
-};
+	var template = fs.readFileSync(__dirname + "/resume.template", "utf-8");
+	return Handlebars.compile(template)({
+		css: css,
+		resume: resume
+	});
+}
 
 module.exports = {
 	render: render
-}
+};
