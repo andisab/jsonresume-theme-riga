@@ -36,9 +36,9 @@
 		                        <div class="address">
 		                        <strong>Address: </strong>
 		                        {{address}}
-		                        {{#if city}}{{city}}{{/if}}
-		                        {{#if region}}, {{region}}{{/if}}
-		                        {{#if postalCode}} {{postalCode}}{{/if}}
+		                        {{#city.length}}{{city}}{{/city.length}}
+		                        {{#region.length}}, {{region}}{{/region.length}}
+		                        {{#postalCode.length}} {{postalCode}}{{/postalCode.length}}
 		                        </div>
 		                    {{/address.length}}
 		                {{/location}}
@@ -47,15 +47,15 @@
 						<div id="profiles">
 							{{#each profiles}}
 							<div class="item">
-								{{#if url}}
+								{{#url.length}}
 								<a href="{{url}}">
-								{{/if}}
-								{{#if network}}
+								{{/url.length}}
+								{{#network.length}}
 								<icon class="entypo-{{class}}"></icon>
-								{{/if}}
-								{{#if url}}
+								{{/network.length}}
+								{{#url.length}}
 								</a>
-								{{/if}}
+								{{/url.length}}
 							</div>
 							{{/each}}
 						</div>
