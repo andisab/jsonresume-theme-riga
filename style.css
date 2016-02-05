@@ -29,7 +29,7 @@ h2,h3 {
 }
 
 main {
-	padding: 35px 0;
+	padding: 10px 0px;
 	width:90%;
 	margin:auto;
 }
@@ -60,12 +60,9 @@ section#header .picture {
 }
 
 section#header .details {
-	min-width: 160px;
+	width: 170px;
 }
 
-h3.work {
-
-}
 
 
 @media(min-width:768px), print {
@@ -84,6 +81,21 @@ h3.work {
 	}
 }
 
+@media screen and (max-width: 780px) {
+	h2.vr { display:none; }
+	.name h2 { margin-top: -5px; }
+}
+
+
+
+h3.work {
+	margin-top:10px;
+}
+
+hr.workTitle {
+	margin:0px 0px 5px 0px !important;
+}
+
 section#work h3.company {
 	font-weight: 400;
 }
@@ -93,13 +105,9 @@ section#work .details h3.company:nth-child(n+2) {
 }
 
 
-section#skills .details {
-	-moz-column-count: 2;
-	-moz-column-gap: 0px;
-	-webkit-column-count: 2;
-	-webkit-column-gap: 0px;
-	column-count: 2;
-	column-gap: 0px;
+ul.skills {
+	list-style: none;
+	padding:0px;
 }
 
 .details h4 {
